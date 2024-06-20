@@ -3,7 +3,6 @@ import { Button, Container, Grid, TextField, Typography, Box, Select, MenuItem, 
 import { useNavigate } from 'react-router-dom';
 import { ChromePicker } from 'react-color';
 import { setFile } from '../indexedDB';
-import styled from 'styled-components';
 
 interface HeaderSectionProps {
     headerColor: string;

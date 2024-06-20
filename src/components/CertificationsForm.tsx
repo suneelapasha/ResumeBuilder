@@ -4,9 +4,9 @@ import { TextField, Button, Box, IconButton } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { updateForm, selectForm } from '../features/form/formSlice';
+import { updateForm } from '../features/form/formSlice';
 import { AppDispatch, RootState } from '../app/store';
-import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
+import { RemoveCircleOutline } from '@mui/icons-material';
 import styled from 'styled-components';
 
 interface Props {
@@ -63,9 +63,7 @@ const CertificationsForm: React.FC<Props> = ({ handleNext, handleBack }) => {
             label="Date"
             value={cert.date}
             onChange={(date) => handleDateChange(index, 'date', date)}
-            // renderInput={(params) => <TextField {...params} />}
           />
-          {/* <TextField name="date" label="Date" value={cert.date} onChange={(e) => handleChange(index, e)} /> */}
           <StyledIconButton onClick={() => handleRemoveCertification(index)}>
             <RemoveCircleOutline />
           </StyledIconButton>

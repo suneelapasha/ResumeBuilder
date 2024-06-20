@@ -4,9 +4,9 @@ import { TextField, Button, Box, IconButton } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { updateForm, selectForm } from '../features/form/formSlice';
+import { updateForm } from '../features/form/formSlice';
 import { AppDispatch, RootState } from '../app/store';
-import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
+import { RemoveCircleOutline } from '@mui/icons-material';
 import styled from 'styled-components';
 
 interface Props {
@@ -32,8 +32,7 @@ const EducationForm: React.FC<Props> = ({ handleNext, handleBack }) => {
   const handleChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     const newEducation = [...education];
-    newEducation[index] = { ...newEducation[index], [name]: value }; // Update the specific experience object
-    // newEducation[index][name] = value;
+    newEducation[index] = { ...newEducation[index], [name]: value };
     dispatch(updateForm({ education: newEducation }));
   };
 
@@ -67,16 +66,15 @@ const EducationForm: React.FC<Props> = ({ handleNext, handleBack }) => {
             label="Start Date"
             value={edu.startDate}
             onChange={(date) => handleDateChange(index, 'startDate', date)}
-            // renderInput={(params) => <TextField {...params} />}
+           
           />
             <DatePicker
             label="End Date"
             value={edu.endDate}
             onChange={(date) => handleDateChange(index, 'endDate', date)}
-            // renderInput={(params) => <TextField {...params} />}
+           
           />
-          {/* <TextField name="startDate" label="Start Date" value={edu.startDate} onChange={(e) => handleChange(index, e)} />
-          <TextField name="endDate" label="End Date" value={edu.endDate} onChange={(e) => handleChange(index, e)} /> */}
+         
           <TextField name="description" label="Description" value={edu.description} onChange={(e) => handleChange(index, e)} />
           <StyledIconButton onClick={() => handleRemoveEducation(index)}>
             <RemoveCircleOutline />

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TextField, Button, Box, IconButton } from '@mui/material';
-import { updateForm, selectForm } from '../features/form/formSlice';
+import { updateForm } from '../features/form/formSlice';
 import { AppDispatch, RootState } from '../app/store';
-import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
+import { RemoveCircleOutline } from '@mui/icons-material';
 import styled from 'styled-components';
 
 

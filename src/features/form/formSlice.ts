@@ -113,7 +113,6 @@ const formSlice = createSlice({
         }));
       }
       if (education) {
-        // state.education = education;
         state.education = education.map(edu => ({
           ...edu,
           startDate: edu.startDate ? new Date(edu.startDate) : null,
@@ -121,7 +120,6 @@ const formSlice = createSlice({
         }));
       }
       if (certifications) {
-        // state.certifications = certifications;
         state.certifications = certifications.map(cert => ({
           ...cert,
           date: cert.date ? new Date(cert.date) : null,

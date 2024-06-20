@@ -5,9 +5,9 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
-import { updateForm, selectForm } from '../features/form/formSlice';
+import { updateForm } from '../features/form/formSlice';
 import { AppDispatch, RootState } from '../app/store';
-import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
+import { RemoveCircleOutline } from '@mui/icons-material';
 import styled from 'styled-components';
 
 interface Props {
@@ -64,16 +64,13 @@ const ExperiencesForm: React.FC<Props> = ({ handleNext, handleBack }) => {
             label="Start Date"
             value={exp.startDate}
             onChange={(date) => handleDateChange(index, 'startDate', date)}
-            // renderInput={(params) => <TextField {...params} />}
           />
             <DatePicker
             label="End Date"
             value={exp.endDate}
             onChange={(date) => handleDateChange(index, 'endDate', date)}
-            // renderInput={(params) => <TextField {...params} />}
           />
-          {/* <TextField name="startDate" label="Start Date" value={exp.startDate} onChange={(e) => handleChange(index, e)} /> */}
-          {/* <TextField name="endDate" label="End Date" value={exp.endDate} onChange={(e) => handleChange(index, e)} /> */}
+          
           <TextField name="description" label="Description" value={exp.description} onChange={(e) => handleChange(index, e)} />
           <StyledIconButton onClick={() => handleRemoveExperience(index)}>
               <RemoveCircleOutline />

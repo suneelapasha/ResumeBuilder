@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Stepper, Step, StepLabel, Box, Button,  useMediaQuery, useTheme  } from '@mui/material';
+import { Stepper, Step, StepLabel, Box,  useMediaQuery, useTheme  } from '@mui/material';
 import PersonalInfoForm from './PersonalInfoForm';
 import ExperiencesForm from './ExperiencesForm';
 import EducationForm from './EducationForm';
